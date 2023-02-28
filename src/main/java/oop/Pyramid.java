@@ -14,5 +14,6 @@ public class Pyramid {
             System.out.println("");
             border++;
         }
+        System.out.println("Changes from main");
     }
 }
