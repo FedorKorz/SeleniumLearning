@@ -41,6 +41,4 @@ public class ProductCatalogue extends AbstractComponents {
         waitForElementToDisappear(spinner);
         return new CompleteOrder(driver);
     }
-
-
 }

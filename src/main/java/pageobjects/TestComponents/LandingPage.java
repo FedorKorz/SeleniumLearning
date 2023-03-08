@@ -22,6 +22,15 @@ public class LandingPage extends AbstractComponents {
     @FindBy(id="login")
     WebElement submit;
 
+    @FindBy(css="div[class='ng-star-inserted']")
+    WebElement ErrorMessage;
+
+    public String getErrorMessage() {
+        waitForElemToAppear(ErrorMessage);
+        System.out.println(ErrorMessage.getText());
+        return ErrorMessage.getText();
+    }
+
     public ProductCatalogue loginApplication(String email, String pass) {
         userEmail.sendKeys(email);
         password.sendKeys(pass);
@@ -29,9 +38,7 @@ public class LandingPage extends AbstractComponents {
         return new ProductCatalogue(driver);
     }
 
-    public void goTo(String URL) {
-        driver.get(URL);
+    public void goTo() {
+        driver.get("https://rahulshettyacademy.com/client");
     }
-
-
 }
